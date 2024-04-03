@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackedSaves - Websites</title>
+    <style>
+      body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        /* Hide horizontal scrollbar */
+      }
+
+      #menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #333333;
+        border-right: 2px solid #000000;
+        /* Add black border to the right side */
+        transform: translateX(-250px);
+        transition: transform 0.3s ease-out;
+        z-index: 3;
+        /* Ensure menu appears over header */
+        overflow-y: auto;
+        /* Enable vertical scrolling */
+      }
+
+      #menu.open {
+        transform: translateX(0);
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 20px 0;
+        /* Add padding to the top of the links */
+        margin: 0;
+      }
+
+      #menu li {
+        padding: 10px;
+        text-align: center;
+      }
+
+      #menu li a {
+        color: #ffffff;
+        text-decoration: none;
+        display: block;
+      }
+
+      #menu li a:hover {
+        background-color: #555555;
+      }
+
+      header {
+        background-color: #333333;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 0;
+        box-sizing: border-box;
+        border-bottom: 2px solid black;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        /* Adjusted top position to ensure the header starts from the top */
+        z-index: 2;
+      }
+
+      h1 {
+        font-size: 5vh;
+        /* Set font size using viewport height */
+      }
+
+      .container {
+        transition: padding-left 0.3s ease-out;
+        max-width: calc(100%);
+        padding-top: 60px;
+        /* Adjusted padding to accommodate the fixed header */
+        padding-bottom: 60px;
+        /* Adjusted padding to accommodate the fixed footer */
+        overflow-y: auto;
+        height: calc(100vh - 120px);
+        /* Adjusted height calculation */
+        margin-top: 100px;
+        /* Adjusted margin-top to properly position the container below the header */
+        box-sizing: border-box;
+      }
+
+      .container.open-menu {
+        padding-left: 270px;
+        /* Adjust padding when menu is open */
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      footer {
+        background-color: #333333;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        border-top: 2px solid #000000;
+        /* Add black border to the top */
+      }
+
+      #menu-toggle {
+        display: block;
+        position: fixed;
+        left: 10px;
+        /* Adjust left position */
+        top: 10px;
+        z-index: 4;
+        /* Ensure toggle stays above the menu and content */
+        cursor: pointer;
+      }
+
+      #menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 5px 0;
+        transition: background-color 0.3s ease-out;
+      }
+
+      #menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+        /* Hide middle bar when menu is open */
+      }
+
+      #menu-toggle.open .bar:first-child {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+
+      #menu-toggle.open .bar:last-child {
+        transform: rotate(-45deg) translate(5px, -6px);
+      }
+
+      /* Close button */
+      #close-menu {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        /* Adjust right position */
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      #close-menu:hover {
+        color: #cccccc;
+      }
+
+      /* Content specific to Websites page */
+      .websites-content {
+        padding: 0 20px;
+        /* Adjust padding to remove extra space at the top */
+        text-align: center;
+      }
+
+      .website-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        /* Distribute items evenly */
+      }
+
+      .website {
+        background-color: #333333;
+        /* Change background color of website bubbles */
+        border: 2px solid #000000;
+        /* Add black border to website bubbles */
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        width: calc(45% - 20px);
+        /* Make each website container take up 45% of the available width */
+      }
+
+      .website h2 {
+        margin-top: 0;
+      }
+
+      .website p {
+        margin-bottom: 0;
+      }
+
+      .website-image {
+        max-width: calc(100% - 40px);
+        /* Set max width for the website images */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to HackedSaves - Websites</h1>
+      <div id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </header>
+    <div id="menu">
+      <span id="close-menu">&times;</span>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="games.html">Games</a>
+        </li>
+        <li>
+          <a href="unblockers.html">Unblockers</a>
+        </li>
+        <li>
+          <a href="other.html">Other</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <!-- Content of the Websites page goes here -->
+      <div class="websites-content">
+        <div class="website-container">
+          <div class="website">
+            <h2>Website 1</h2>
+            <a href="https://example.com/website1" target="_blank">
+              <img src="website1.png" alt="Website 1 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 1.</p>
+          </div>
+          <div class="website">
+            <h2>Website 2</h2>
+            <a href="https://example.com/website2" target="_blank">
+              <img src="website2.png" alt="Website 2 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 2.</p>
+          </div>
+          <div class="website">
+            <h2>Website 3</h2>
+            <a href="https://example.com/website3" target="_blank">
+              <img src="website3.png" alt="Website 3 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 3.</p>
+          </div>
+          <div class="website">
+            <h2>Website 4</h2>
+            <a href="https://example.com/website4" target="_blank">
+              <img src="website4.png" alt="Website 4 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 4.</p>
+          </div>
+          <div class="website">
+            <h2>Website 5</h2>
+            <a href="https://example.com/website5" target="_blank">
+              <img src="website5.png" alt="Website 5 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 5.</p>
+          </div>
+          <div class="website">
+            <h2>Website 6</h2>
+            <a href="https://example.com/website6" target="_blank">
+              <img src="website6.png" alt="Website 6 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 6.</p>
+          </div>
+          <div class="website">
+            <h2>Website 7</h2>
+            <a href="https://example.com/website7" target="_blank">
+              <img src="website7.png" alt="Website 7 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 7.</p>
+          </div>
+          <div class="website">
+            <h2>Website 8</h2>
+            <a href="https://example.com/website8" target="_blank">
+              <img src="website8.png" alt="Website 8 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 8.</p>
+          </div>
+          <div class="website">
+            <h2>Website 9</h2>
+            <a href="https://example.com/website9" target="_blank">
+              <img src="website9.png" alt="Website 9 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 9.</p>
+          </div>
+          <div class="website">
+            <h2>Website 10</h2>
+            <a href="https://example.com/website10" target="_blank">
+              <img src="website10.png" alt="Website 10 screenshot failed to load!" class="website-image">
+            </a>
+            <p>Description of Website 10.</p>
+          </div>
+          <!-- Add more websites as needed -->
+        </div>
+      </div>
+    </div>
+    <footer> &copy; 2024 HackedSaves - All rights reserved </footer>
+    <script>
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('open');
+        document.querySelector('.container').classList.toggle('open-menu');
+        this.classList.toggle('open');
+      });
+      document.getElementById('close-menu').addEventListener('click', function() {
+        document.getElementById('menu').classList.remove('open');
+        document.querySelector('.container').classList.remove('open-menu');
+        document.getElementById('menu-toggle').classList.remove('open');
+      });
+    </script>
+  </body>
+</html>

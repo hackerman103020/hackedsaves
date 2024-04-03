@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackedSaves - Unblockers</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* Hide horizontal scrollbar */
+        }
+
+        #menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333333;
+            border-right: 2px solid #000000;
+            /* Add black border to the right side */
+            transform: translateX(-250px);
+            transition: transform 0.3s ease-out;
+            z-index: 3;
+            /* Ensure menu appears over header */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+        }
+
+        #menu.open {
+            transform: translateX(0);
+        }
+
+        #menu ul {
+            list-style-type: none;
+            padding: 20px 0;
+            /* Add padding to the top of the links */
+            margin: 0;
+        }
+
+        #menu li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #menu li a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+        }
+
+        #menu li a:hover {
+            background-color: #555555;
+        }
+
+        header {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            box-sizing: border-box;
+            border-bottom: 2px solid black;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 5vh;
+            /* Set font size using viewport height */
+        }
+
+        .container {
+            max-width: 100%;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            overflow-y: auto;
+            height: calc(100vh - 120px);
+            margin-top: 100px;
+            box-sizing: border-box;
+            transition: padding-left 0.3s ease-out; /* Smooth transition for padding change */
+        }
+
+        .container.open-menu {
+            padding-left: 270px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            border-top: 2px solid #000000;
+        }
+
+        #menu-toggle {
+            display: block;
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            z-index: 4;
+            cursor: pointer;
+        }
+
+        #menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 5px 0;
+            transition: background-color 0.3s ease-out;
+        }
+
+        #menu-toggle.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        #menu-toggle.open .bar:first-child {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        #menu-toggle.open .bar:last-child {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        /* Close button */
+        #close-menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        #close-menu:hover {
+            color: #cccccc;
+        }
+
+        /* Content specific to Unblockers page */
+        .unblockers-content {
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .unblocker-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .unblocker {
+            background-color: #333333;
+            border: 2px solid #000000;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: calc(45% - 20px);
+        }
+
+        .unblocker h2 {
+            margin-top: 0;
+        }
+
+        .unblocker p {
+            margin-bottom: 0;
+        }
+
+        .unblocker-image {
+            max-width: calc(100% - 40px);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to HackedSaves - Unblockers</h1>
+    <div id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</header>
+<div id="menu">
+    <span id="close-menu">&times;</span>
+    <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="games.html">Games</a>
+        </li>
+        <li>
+            <a href="websites.html">Websites</a>
+        </li>
+        <li>
+            <a href="other.html">Other</a>
+        </li>
+    </ul>
+</div>
+<div class="container">
+    <!-- Content of the Unblockers page goes here -->
+    <div class="unblockers-content">
+        <div class="unblocker-container">
+            <div class="unblocker">
+                <h2>Unblocker 1</h2>
+                <a href="https://example.com/unblocker1" target="_blank">
+                    <img src="unblocker1.png" alt="Unblocker 1 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 1.</p>
+            </div>
+            <div class="unblocker">
+                <h2>Unblocker 2</h2>
+                <a href="https://example.com/unblocker2" target="_blank">
+                    <img src="unblocker2.png" alt="Unblocker 2 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 2.</p>
+            </div>
+            <div class="unblocker">
+                <h2>Unblocker 3</h2>
+                <a href="https://example.com/unblocker3" target="_blank">
+                    <img src="unblocker3.png" alt="Unblocker 3 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 3.</p>
+            </div>
+            <div class="unblocker">
+                <h2>Unblocker 4</h2>
+                <a href="https://example.com/unblocker4" target="_blank">
+                    <img src="unblocker4.png" alt="Unblocker 4 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 4.</p>
+            </div>
+            <div class="unblocker">
+                <h2>Unblocker 5</h2>
+                <a href="https://example.com/unblocker5" target="_blank">
+                    <img src="unblocker5.png" alt="Unblocker 5 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 5.</p>
+            </div>
+            <div class="unblocker">
+                <h2>Unblocker 6</h2>
+                <a href="https://example.com/unblocker6" target="_blank">
+                    <img src="unblocker6.png" alt="Unblocker 6 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 6.</p>
+            </div>
+            <div class="unblocker">
+                <h2>Unblocker 7</h2>
+                <a href="https://example.com/unblocker7" target="_blank">
+                    <img src="unblocker7.png" alt="Unblocker 7 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 7.</p>
+            </div>
+            <div class="unblocker">
+                <h2>Unblocker 8</h2>
+                <a href="https://example.com/unblocker8" target="_blank">
+                    <img src="unblocker8.png" alt="Unblocker 8 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 8.</p>
+            </div>
+            <div class="unblocker">
+                <h2>Unblocker 9</h2>
+                <a href="https://example.com/unblocker9" target="_blank">
+                    <img src="unblocker9.png" alt="Unblocker 9 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 9.</p>
+            </div>
+            <div class="unblocker">
+                <h2>Unblocker 10</h2>
+                <a href="https://example.com/unblocker10" target="_blank">
+                    <img src="unblocker10.png" alt="Unblocker 10 screenshot failed to load!" class="unblocker-image">
+                </a>
+                <p>Description of Unblocker 10.</p>
+            </div>
+            <!-- Add more unblockers as needed -->
+        </div>
+    </div>
+</div>
+<footer>&copy; 2024 HackedSaves - All rights reserved</footer>
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('open');
+        document.querySelector('.container').classList.toggle('open-menu');
+        this.classList.toggle('open');
+    });
+    document.getElementById('close-menu').addEventListener('click', function() {
+        document.getElementById('menu').classList.remove('open');
+        document.querySelector('.container').classList.remove('open-menu');
+        document.getElementById('menu-toggle').classList.remove('open');
+    });
+</script>
+</body>
+</html>

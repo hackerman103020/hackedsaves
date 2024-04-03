@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackedSaves - Other</title>
+    <style>
+      body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        /* Hide horizontal scrollbar */
+      }
+
+      #menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #333333;
+        border-right: 2px solid #000000;
+        /* Add black border to the right side */
+        transform: translateX(-250px);
+        transition: transform 0.3s ease-out;
+        z-index: 3;
+        /* Ensure menu appears over header */
+        overflow-y: auto;
+        /* Enable vertical scrolling */
+      }
+
+      #menu.open {
+        transform: translateX(0);
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 20px 0;
+        /* Add padding to the top of the links */
+        margin: 0;
+      }
+
+      #menu li {
+        padding: 10px;
+        text-align: center;
+      }
+
+      #menu li a {
+        color: #ffffff;
+        text-decoration: none;
+        display: block;
+      }
+
+      #menu li a:hover {
+        background-color: #555555;
+      }
+
+      header {
+        background-color: #333333;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 0;
+        box-sizing: border-box;
+        border-bottom: 2px solid black;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        /* Adjusted top position to ensure the header starts from the top */
+        z-index: 2;
+      }
+
+      h1 {
+        font-size: 5vh;
+        /* Set font size using viewport height */
+      }
+
+      .container {
+        transition: padding-left 0.3s ease-out;
+        max-width: calc(100%);
+        padding-top: 60px;
+        /* Adjusted padding to accommodate the fixed header */
+        padding-bottom: 60px;
+        /* Adjusted padding to accommodate the fixed footer */
+        overflow-y: auto;
+        height: calc(100vh - 120px);
+        /* Adjusted height calculation */
+        margin-top: 100px;
+        /* Adjusted margin-top to properly position the container below the header */
+        box-sizing: border-box;
+      }
+
+      .container.open-menu {
+        padding-left: 270px;
+        /* Adjust padding when menu is open */
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      footer {
+        background-color: #333333;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        border-top: 2px solid #000000;
+        /* Add black border to the top */
+      }
+
+      #menu-toggle {
+        display: block;
+        position: fixed;
+        left: 10px;
+        /* Adjust left position */
+        top: 10px;
+        z-index: 4;
+        /* Ensure toggle stays above the menu and content */
+        cursor: pointer;
+      }
+
+      #menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 5px 0;
+        transition: background-color 0.3s ease-out;
+      }
+
+      #menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+        /* Hide middle bar when menu is open */
+      }
+
+      #menu-toggle.open .bar:first-child {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+
+      #menu-toggle.open .bar:last-child {
+        transform: rotate(-45deg) translate(5px, -6px);
+      }
+
+      /* Close button */
+      #close-menu {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        /* Adjust right position */
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      #close-menu:hover {
+        color: #cccccc;
+      }
+
+      /* Content specific to Other page */
+      .other-content {
+        padding: 0 20px;
+        /* Adjust padding to remove extra space at the top */
+        text-align: center;
+      }
+
+      .other-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        /* Distribute items evenly */
+      }
+
+      .other {
+        background-color: #333333;
+        /* Change background color of other bubbles */
+        border: 2px solid #000000;
+        /* Add black border to other bubbles */
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        width: calc(45% - 20px);
+        /* Make each other container take up 45% of the available width */
+      }
+
+      .other h2 {
+        margin-top: 0;
+      }
+
+      .other p {
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to HackedSaves - Other</h1>
+      <div id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </header>
+    <div id="menu">
+      <span id="close-menu">&times;</span>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="games.html">Games</a>
+        </li>
+        <li>
+          <a href="unblockers.html">Unblockers</a>
+        </li>
+        <li>
+          <a href="websites.html">Websites</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <!-- Content of the Other page goes here -->
+      <div class="other-content">
+        <div class="other-container">
+          <div class="other">
+            <h2>Other 1</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other1.jpg" alt="Other 1 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 1.</p>
+          </div>
+          <div class="other">
+            <h2>Other 2</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other2.jpg" alt="Other 2 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 2.</p>
+          </div>
+          <div class="other">
+            <h2>Other 3</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other3.jpg" alt="Other 3 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 3.</p>
+          </div>
+          <div class="other">
+            <h2>Other 4</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other4.jpg" alt="Other 4 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 4.</p>
+          </div>
+          <div class="other">
+            <h2>Other 5</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other5.jpg" alt="Other 5 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 5.</p>
+          </div>
+          <div class="other">
+            <h2>Other 6</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other6.jpg" alt="Other 6 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 6.</p>
+          </div>
+          <div class="other">
+            <h2>Other 7</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other7.jpg" alt="Other 7 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 7.</p>
+          </div>
+          <div class="other">
+            <h2>Other 8</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other8.jpg" alt="Other 8 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 8.</p>
+          </div>
+          <div class="other">
+            <h2>Other 9</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other9.jpg" alt="Other 9 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 9.</p>
+          </div>
+          <div class="other">
+            <h2>Other 10</h2>
+            <a href="https://example.com" target="_blank">
+              <img src="other10.jpg" alt="Other 10 screenshot failed to load!" style="max-width: calc(100% - 40px);">
+            </a>
+            <p>Description of Other 10.</p>
+          </div>
+          <!-- Add more other as needed -->
+        </div>
+      </div>
+    </div>
+    <footer> &copy; 2024 HackedSaves - All rights reserved </footer>
+    <script>
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('open');
+        document.querySelector('.container').classList.toggle('open-menu');
+        this.classList.toggle('open');
+      });
+      document.getElementById('close-menu').addEventListener('click', function() {
+        document.getElementById('menu').classList.remove('open');
+        document.querySelector('.container').classList.remove('open-menu');
+        document.getElementById('menu-toggle').classList.remove('open');
+      });
+    </script>
+  </body>
+</html>

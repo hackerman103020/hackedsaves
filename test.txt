@@ -1,8 +1,28 @@
-Welcome to the Vault!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded HTML Content</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
 
-Here are some secret documents:
-1. Top secret plans
-2. Classified information
-3. Confidential files
+        h1 {
+            color: #093163;
+        }
 
-Remember, handle with care and keep this information secure!
+        p {
+            color: #093163;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, this is embedded HTML content!</h1>
+    <p>This content is fetched from a .txt file and displayed dynamically.</p>
+</body>
+</html>

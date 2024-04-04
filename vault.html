@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333333;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid black;
+        }
+
+        .container {
+            max-width: 100%;
+            padding-left: 250px;
+            padding-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-sizing: border-box;
+            border-top: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Vault</h1>
+    </header>
+
+    <div class="container">
+        <!-- Add your vault content here -->
+        <p>This is the vault page. Only authorized users can access this content.</p>
+    </div>
+
+    <footer>
+        &copy; 2024 HackedSaves - All rights reserved
+    </footer>
+
+<script>
+    // Check authentication status
+    var authenticated = localStorage.getItem("authenticated");
+    if (!authenticated) {
+        // Redirect to login page
+        window.location.href = "login.html";
+    }
+
+    // Remove authentication token when leaving the vault page
+    window.addEventListener("beforeunload", function() {
+        localStorage.removeItem("authenticated");
+    });
+</script>
+</body>
+</html>
